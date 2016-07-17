@@ -76,6 +76,13 @@ a.block-wrap {
 	width: 100%;
 }
 
+img.certified-png {
+	width: 1rem;
+	position: relative;
+	top: 0.2rem;
+	margin: 0 0.2rem;
+}
+
 .title-container {
 	height: 3rem;
 	width: 20rem;

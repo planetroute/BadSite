@@ -16,7 +16,7 @@ include("html.php");
 		<div class="container">
 			<?php header_code(); ?>
 			<div class="register-box">
-				<h3>Forgot Password</h3>
+				<h3>Request a Password Reset Code</h3>
 				<?php
 					if(isset($_GET['req'])){ ?>
 					<ol class="error">
@@ -45,8 +45,8 @@ include("html.php");
 					<?php
 					}
 				 ?>
-				<form method="GET" action="forgot-password2.php">
-					<input type="text" name="email" placeholder="Email" />
+				<form method="POST" action="forgot-password3.php<?php if(isset($_GET['email'])){echo "?email=".urlencode($_GET['email']);} ?>">
+					<input type="text" name="secret_answer" placeholder="[question]" />
 					<input type="submit" value="Submit" />
 				</form>
 			</div>	

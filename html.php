@@ -11,7 +11,7 @@ function header_code(){
 			</div>
 			<div class="title-container">
 				<h1>Secure* Websites Inc.</h1>
-				<h2>Robust Security</h2>
+				<h2>Robust Security&trade;<img src="/shield.png" class="certified-png"></h2>
 			</div>
 		</a>
 		<div class="link-container">
