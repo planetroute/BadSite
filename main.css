@@ -131,7 +131,8 @@ input {
 	border-radius: 0.2rem;
 	background: white;
 	height: 2rem;
-	font-size: 1rem;
+	font-size: 0.9rem;
+	font-weight: thin;
 	box-sizing: border-box;
 	padding: 0.2rem 1rem;
 	display: block;
