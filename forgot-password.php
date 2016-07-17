@@ -45,7 +45,7 @@ include("html.php");
 					<?php
 					}
 				 ?>
-				<form method="POST" action="forgot_password.php<?php if(isset($_GET['redirect'])){echo '?redirect=' . $_GET['redirect'];} ?>">
+				<form method="POST" action="forgot_password.php">
 					<input type="text" name="email" placeholder="Email" />
 					<input type="submit" name="submit" value="Reset" />
 				</form>
