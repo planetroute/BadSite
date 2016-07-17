@@ -7,12 +7,6 @@ $required = ["email", "password"];
 
 
 if(isset($_POST['submit'])){
-	/*foreach($required as $item){
-		if(!isset($_POST[$item]) || preg_match("/^\s*$/" , $_POST[$item])){
-			$error["required"][] = $item;
-		}
-	}*/
-	foreach($_POST as $name=>$value){if(ctype_digit($value)){$_POST[$name]=intval($value);}}
 	if($error === $init_error){
 		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 			$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
