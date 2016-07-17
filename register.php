@@ -39,7 +39,7 @@ include("html.php");
 					<?php
 						$error = explode(";", $_GET['err']);
 						foreach($error as $item){
-						?><ol class="error"><?php echo $item; ?></ol><?php
+						?><ol class="error"><?php echo htmlentities($item); ?></ol><?php
 						}
 						?>
 					<?php
