@@ -28,12 +28,16 @@ body {
 }
 body,body *{
 	word-break: break-word;
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-a{
-	text-decoration: none;
+a {
 	display: inline-block;
 	color: initial;
+}
+
+input[type="submit"], input[type="button"] {
+	cursor: pointer;
+    cursor: hand;
 }
 
 a.block-wrap {
@@ -46,6 +50,14 @@ a.block-wrap {
 	background: rgb(67, 81, 81);
 	box-sizing: border-box;
 	padding: 1rem;
+}
+
+.title-container {
+	line-height: 1.4rem;
+}
+
+.title-container h1 {
+	margin-top: 0.4rem;
 }
 
 .header-content div {
@@ -83,11 +95,18 @@ a.block-wrap {
 }
 
 .widget-container .name {
-	position: absolute;
-	top: 6rem;
-	right: 3rem;
+	position: relative;
+	top: 3rem;
+	display: block;
+	float: right;
+/* 	right: 3rem; */
+	
 	font-size: 0.8rem;
 	color: black;
+}
+
+.widget-container .name a, .search-results a {
+	text-decoration: none;
 }
 
 .link-container {
@@ -97,10 +116,12 @@ a.block-wrap {
 	/*background: rgb(100, 150, 100);*/
 }
 
-.widget-container{
+.widget-container {
 	height: 3rem;
-	width: 25rem;
-	float: left;
+/* 	width: 25rem; */
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
 	/*background: rgb(100, 100, 150);*/
 	padding: 0.5rem 0.8rem;
 }
@@ -110,6 +131,7 @@ input {
 	border-radius: 0.2rem;
 	background: white;
 	height: 2rem;
+	font-size: 1rem;
 	box-sizing: border-box;
 	padding: 0.2rem 1rem;
 	display: block;
@@ -124,6 +146,10 @@ input {
 .widget-container input:last-of-type {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
+}
+
+.widget-container input {
+	font-size: 1rem;
 }
 
 .widget-container input[type="submit"] {
