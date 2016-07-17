@@ -35,6 +35,10 @@ a {
 	color: initial;
 }
 
+a.mini-link {
+	font-size: 0.8rem;
+}
+
 input[type="submit"], input[type="button"] {
 	cursor: pointer;
     cursor: hand;

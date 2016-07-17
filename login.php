@@ -49,6 +49,7 @@ include("html.php");
 					<input type="text" name="email" placeholder="Email" />
 					<input type="password" name="password" placeholder="Password" />
 					<input type="submit" name="submit" value="Login" />
+					<a href="/forgot-password.php" class="mini-link">Forgot your password?</a>
 				</form>
 			</div>	
 		</div>

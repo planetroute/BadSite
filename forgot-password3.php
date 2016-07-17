@@ -2,6 +2,44 @@
 
 include("html.php");
 
+$init_error = $error = ["required" => []];
+$required = ["secret_answer"];
+
+if(isset($_GET['email'])){
+	foreach($required as $item){
+		if(!isset($_POST[$item]) || preg_match("/^\s*$/" , $_POST[$item])){
+			$error["required"][] = $item;
+		}
+	}
+	if($error === $init_error){
+		$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
+		$sth->bindParam(':email', $_GET['email'], PDO::PARAM_STR);
+		$sth->execute();
+		$results = $sth->fetchAll();
+		$result = $results[0];
+		if($sth->rowCount() == 0){
+			$error[] = "Sorry, that email address was not recognised.";
+		}else {
+			$secret_question = $result['secret_question'];
+		}
+	}
+	if($error !== $init_error){
+		$q = "";
+		if($error["required"] !== []){
+			$q .= "req=" . str_replace("_", "%20", urlencode(implode(";", $error["required"]))) . "&";
+		}
+		unset($error["required"]);
+		if($error !== []){
+			$q .= "err=" . urlencode(implode(";", $error)) . "&";
+		}else{
+			$q = substr($q, 0, strlen($q)-1);
+		}
+		header('Status Code: HTTP/1.1 302 Found');
+		header("Location: /forgot-password.php?$q");
+		die();
+	}
+}
+
 ?>
 
 
