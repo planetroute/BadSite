@@ -28,7 +28,7 @@ include("html.php");
 			$n = $sth->rowCount();
 			?>
 			<div class="content">
-				<div class="row"><h2><?php echo $n; ?> results for '<?php echo htmlentities($_GET['q']); ?>'</h2></div>
+				<div class="row"><h3><?php echo $n; ?> results for '<?php echo htmlentities($_GET['q']); ?>'</h3></div>
 			<div class="search-results">
 			<?php foreach($result as $row){ ?>
 				<a class="result-row" href="/product.php?id=<?php echo $row['product_id']; ?>">

@@ -1,3 +1,11 @@
+@import url(/css?family=Montserrat:700);
+@import url(/css?family=Raleway:400,300,500);
+
+/* 
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500);
+ */
+
 *{
 	margin: 0;
 	padding: 0;
@@ -28,20 +36,20 @@ body {
 }
 body,body *{
 	word-break: break-word;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
 a {
 	display: inline-block;
 	color: initial;
 }
 
-a.mini-link {
-	font-size: 0.8rem;
+h3 {
+	font-size: 1.8rem;
+	line-height: 3rem;
 }
 
-input[type="submit"], input[type="button"] {
-	cursor: pointer;
-    cursor: hand;
+a.mini-link {
+	font-size: 0.8rem;
 }
 
 a.block-wrap {
@@ -49,19 +57,12 @@ a.block-wrap {
 }
 
 .header-container {
-	height: 5rem;
+	height: 5.25rem;
 	width: 100%;
 	background: rgb(67, 81, 81);
+	background: rgba(80,90,115,1);
 	box-sizing: border-box;
 	padding: 1rem;
-}
-
-.title-container {
-	line-height: 1.4rem;
-}
-
-.title-container h1 {
-	margin-top: 0.4rem;
 }
 
 .header-content div {
@@ -88,6 +89,7 @@ img.certified-png {
 }
 
 .title-container {
+	line-height: 1.4rem;
 	height: 3rem;
 	width: 20rem;
 	float: left;
@@ -96,13 +98,18 @@ img.certified-png {
 }
 
 .title-container h1 {
+	margin-top: 0.4rem;
 	font-size: 1.5rem;
+	font-family: 'Montserrat', sans-serif;
 	color: rgb(230, 230, 230);
+/* 	color: rgba(80,90,115,1); */
 }
 
 .title-container h2 {
+	font-family: courier;
 	font-size: 0.8rem;
 	color: rgb(160, 215, 160);
+	color: rgb(57, 191, 108);
 }
 
 .widget-container .name {
@@ -137,7 +144,7 @@ img.certified-png {
 	padding: 0.5rem 0.8rem;
 }
 
-input {
+input, select {
 	border: 0;
 	border-radius: 0.2rem;
 	background: white;
@@ -148,6 +155,23 @@ input {
 	padding: 0.2rem 1rem;
 	display: block;
 	float: left;
+}
+
+input[type="text"], input[type="password"] {
+	width: 16em;
+	border: thin solid rgb(111, 111, 111);
+}
+
+input[type="submit"], input[type="button"] {
+	cursor: pointer;
+    cursor: hand;
+    background: rgb(235, 235, 235);
+}
+
+select {
+	display: inline-block;
+	float: none;
+	border: thin solid rgb(111, 111, 111);
 }
 
 .widget-container input:first-of-type {
@@ -162,6 +186,7 @@ input {
 
 .widget-container input {
 	font-size: 1rem;
+	border: 0;
 }
 
 .widget-container input[type="submit"] {
@@ -172,6 +197,7 @@ input {
 	margin: 3rem auto;
 	width: 60rem;
 	max-width: 100%;
+/* 	border-left: thin solid rgba(80,90,115,1); */
 }
 
 .search-results {
@@ -197,10 +223,10 @@ input {
 .register-box {
 	width: 40rem;
 	max-width: 100%;
-	background: rgb(230, 230, 230);
+/* 	background: rgb(230, 230, 230); */
 	margin: 3rem auto;
 	padding: 2rem 5rem;
-	border-radius: 0.8rem;
+/* 	border-radius: 0.8rem; */
 }
 
 .register-box input {

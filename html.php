@@ -7,11 +7,11 @@ function header_code(){
 	<div class="header-content">
 		<a href="/" class="block-wrap">
 			<div class="logo-container">
-				<img src="/lock.png" />	
+				<img src="/shield.png" />	
 			</div>
 			<div class="title-container">
 				<h1>Secure* Websites Inc.</h1>
-				<h2>Robust Security&trade;<img src="/shield.png" class="certified-png"></h2>
+				<h2>Robust Security&trade;<!-- <img src="/shield.png" class="certified-png"> --></h2>
 			</div>
 		</a>
 		<div class="link-container">

@@ -3,8 +3,16 @@ session_start();
 include("html.php");
 
 $init_error = $error = ["required" => []];
-$required = ["email", "first_name", "last_name", "password"];
+$required = ["email", "first_name", "last_name", "password", "security_question", "answer"];
 
+
+$security_question_options = [
+			"What was your first school?",
+			"What is your Mother's maiden name?",
+			"What was the name of your first pet?",
+			"What was your town of birth?",
+			"What was the brand of your first car?"
+];
 
 if(isset($_POST['submit'])){
 	foreach($required as $item){
@@ -12,17 +20,22 @@ if(isset($_POST['submit'])){
 			$error["required"][] = $item;
 		}
 	}
+	if(!in_array($_POST['security_question'], $security_question_options, True)){
+		$error[] = "Invalid security question";
+	}
 	if($error === $init_error){
 		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 			$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
 			$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
 			$sth->execute();
 			if($sth->rowCount() == 0){
-				$sth = $dbh->prepare('INSERT INTO users (first_name, last_name, email, password_hash) VALUES	(:first_name, :last_name, :email, :password_hash)');
+				$sth = $dbh->prepare('INSERT INTO users (first_name, last_name, email, password_hash, secret_question, secret_answer) VALUES	(:first_name, :last_name, :email, :password_hash, :secret_question, :secret_answer)');
 				$sth->bindParam(':first_name', $_POST['first_name'], PDO::PARAM_STR);
 				$sth->bindParam(':last_name', $_POST['last_name'], PDO::PARAM_STR);
 				$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
 				$sth->bindParam(':password_hash', secure_password_hash($_POST['email'].$_POST['password']), PDO::PARAM_STR);
+				$sth->bindParam(':secret_question', $_POST['security_question'], PDO::PARAM_STR);
+				$sth->bindParam(':secret_answer', $_POST['answer'], PDO::PARAM_STR);
 				$sth->execute();
 				$id = $dbh->lastInsertId();
 				
