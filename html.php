@@ -22,12 +22,12 @@ function header_code(){
 				<input type="text" name="q" placeholder="Search" />
 				<input type="submit" value="Go" />
 			</form>
+		</div>
 		<?php if(isset($_COOKIE['PHPSESSID']) && isset($_COOKIE['name'])){ ?>
 		<span class="name">Hi, <?php echo $_COOKIE['name']; ?>  | <a href="/logout.php">Logout</a></span>
 		<?php }else { ?>
 		<span class="name"><a href="/login.php">Login</a> | <a href="/register.php">Register</a></span>
 		<?php } ?>
-		</div>
 	</div>
 </div>
 <?php

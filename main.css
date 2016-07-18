@@ -91,7 +91,6 @@ img.certified-png {
 .title-container {
 	line-height: 1.4rem;
 	height: 3rem;
-	width: 20rem;
 	float: left;
 	padding: 0.5rem 0;
 	/*background: rgb(100, 150, 100);*/
@@ -112,18 +111,17 @@ img.certified-png {
 	color: rgb(57, 191, 108);
 }
 
-.widget-container .name {
-	position: relative;
-	top: 3rem;
+.name {
+	position: absolute;
+	top: 6rem;
 	display: block;
-	float: right;
-/* 	right: 3rem; */
+	right: 2.25rem;
 	
 	font-size: 0.8rem;
 	color: black;
 }
 
-.widget-container .name a, .search-results a {
+.name a, .search-results a {
 	text-decoration: none;
 }
 
@@ -140,8 +138,23 @@ img.certified-png {
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
+	transition: right 0.4s ease;
 	/*background: rgb(100, 100, 150);*/
 	padding: 0.5rem 0.8rem;
+}
+
+/* 
+.widget-container form {
+	position: relative;
+	right: 0rem;
+	transition: right 0.4s ease;
+}
+ */
+
+@media screen and (max-width:50rem){
+	.widget-container {
+		right: -25rem;
+	}
 }
 
 input, select {
