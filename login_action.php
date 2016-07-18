@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 			$result = $results[0];
 			if($sth->rowCount() == 0){
 				$error[] = "Sorry, you don't have an account yet. Would you like to <a href='/register.php" . (isset($_GET['redirect']) ? '?redirect=' . urlencode($_GET['redirect']) : '') . "'>create</a> one?";
-			}else if($result['password'] == $_POST['password']){
+			}else if($result['password_hash'] == secure_password_hash($_POST['email'].$_POST['password'])){
 				$_SESSION['id'] = $result['id'];
 				$_SESSION['first_name'] = $result['first_name'];
 				$_SESSION['last_name'] = $result['last_name'];

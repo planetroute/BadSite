@@ -5,7 +5,7 @@ include("html.php");
 $init_error = $error = ["required" => []];
 $required = ["secret_answer"];
 
-if(isset($_GET['email'])){
+if(isset($_GET['email']) && isset($_POST['secret_answer'])){
 	foreach($required as $item){
 		if(!isset($_POST[$item]) || preg_match("/^\s*$/" , $_POST[$item])){
 			$error["required"][] = $item;
@@ -20,7 +20,9 @@ if(isset($_GET['email'])){
 		if($sth->rowCount() == 0){
 			$error[] = "Sorry, that email address was not recognised.";
 		}else {
-			$secret_question = $result['secret_question'];
+			if(strtolower($_POST['secret_answer']) != strtolower($result['secret_answer'])){
+				$error[] = "Sorry, the answer to your secret question wasn't correct.";
+			}
 		}
 	}
 	if($error !== $init_error){
@@ -31,11 +33,12 @@ if(isset($_GET['email'])){
 		unset($error["required"]);
 		if($error !== []){
 			$q .= "err=" . urlencode(implode(";", $error)) . "&";
-		}else{
-			$q = substr($q, 0, strlen($q)-1);
+		}
+		if(isset($_GET['email'])){
+			$q .= "email=".urlencode(urldecode($_GET['email']));
 		}
 		header('Status Code: HTTP/1.1 302 Found');
-		header("Location: /forgot-password.php?$q");
+		header("Location: /forgot-password2.php?$q");
 		die();
 	}
 }
@@ -83,10 +86,10 @@ if(isset($_GET['email'])){
 					<?php
 					}
 				 ?>
-				<form method="POST" action="forgot-password3.php">
+				<form method="POST" action="reset-password.php">
 					<input type="text" name="code" placeholder="Reset Code" />
 					<input type="password" name="new_password" placeholder="New Password" />
-					<?php if(isset($_GET['email'])){echo "<input type='hidden' value='".urlencode($_GET['email'])."' />";} ?>
+					<?php if(isset($_GET['email'])){echo "<input type='hidden' name='email' value='".urlencode($_GET['email'])."' />";} ?>
 					<input type="submit" name="submit" value="Reset" />
 				</form>
 			</div>	

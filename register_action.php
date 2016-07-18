@@ -18,12 +18,11 @@ if(isset($_POST['submit'])){
 			$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
 			$sth->execute();
 			if($sth->rowCount() == 0){
-				$sth = $dbh->prepare('INSERT INTO users (first_name, last_name, email, password, password_hash) VALUES	(:first_name, :last_name, :email, :password, :password_hash)');
+				$sth = $dbh->prepare('INSERT INTO users (first_name, last_name, email, password_hash) VALUES	(:first_name, :last_name, :email, :password_hash)');
 				$sth->bindParam(':first_name', $_POST['first_name'], PDO::PARAM_STR);
 				$sth->bindParam(':last_name', $_POST['last_name'], PDO::PARAM_STR);
 				$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
-				$sth->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
-				$sth->bindParam(':password_hash', substr(hash("md5", $_POST['email'].$_POST['password']), 0, 4), PDO::PARAM_STR);
+				$sth->bindParam(':password_hash', secure_password_hash($_POST['email'].$_POST['password']), PDO::PARAM_STR);
 				$sth->execute();
 				$id = $dbh->lastInsertId();
 				

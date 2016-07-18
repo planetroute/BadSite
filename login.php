@@ -44,6 +44,15 @@ include("html.php");
 						?>
 					<?php
 					}
+					if(isset($_GET['success'])){ ?>
+					<?php
+						$success = explode(";", $_GET['success']);
+						foreach($success as $item){
+						?><ol class="success"><?php echo $item; ?></ol><?php
+						}
+						?>
+					<?php
+					}
 				 ?>
 				<form method="POST" action="login_action.php<?php if(isset($_GET['redirect'])){echo '?redirect=' . $_GET['redirect'];} ?>">
 					<input type="text" name="email" placeholder="Email" />

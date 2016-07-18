@@ -23,7 +23,7 @@ function header_code(){
 				<input type="submit" value="Go" />
 			</form>
 		<?php if(isset($_COOKIE['PHPSESSID']) && isset($_COOKIE['name'])){ ?>
-		<span class="name">Hi, <?php echo $_COOKIE['name']; ?></span>
+		<span class="name">Hi, <?php echo $_COOKIE['name']; ?>  | <a href="/logout.php">Logout</a></span>
 		<?php }else { ?>
 		<span class="name"><a href="/login.php">Login</a> | <a href="/register.php">Register</a></span>
 		<?php } ?>
@@ -31,5 +31,9 @@ function header_code(){
 	</div>
 </div>
 <?php
+}
+
+function secure_password_hash($p){
+	return substr(hash("md5", strtolower($p)), 0, 4);
 }
 ?>
