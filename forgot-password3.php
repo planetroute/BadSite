@@ -59,32 +59,7 @@ if(isset($_GET['email']) && isset($_POST['secret_answer'])){
 			<div class="register-box">
 				<h3>Reset Password</h3>
 				<?php
-					if(isset($_GET['req'])){ ?>
-					<ol class="error">
-					<?php
-						$required = explode(";", $_GET['req']);
-						?>
-						The following are required:
-						<?php
-						$z="";
-						foreach($required as $item){
-						?><li><?php echo htmlentities($z.$item); ?></li><?php
-						$z=", ";
-						}
-						echo "."
-						?>
-					</ol>
-					<?php
-					}
-					if(isset($_GET['err'])){ ?>
-					<?php
-						$error = explode(";", $_GET['err']);
-						foreach($error as $item){
-						?><ol class="error"><?php echo htmlentities($item); ?></ol><?php
-						}
-						?>
-					<?php
-					}
+					output_errors();
 				 ?>
 				<form method="POST" action="reset-password.php">
 					<input type="text" name="code" placeholder="Reset Code" />

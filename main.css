@@ -79,6 +79,43 @@ a.block-wrap {
 
 .logo-container > img {
 	height: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+img.lock-bar {
+	position: absolute;
+	left: 1.65rem;
+	top: 0.3rem;
+	height: 4rem;
+	z-index: 0;
+	transition: top 0.4s ease;
+}
+
+.title-container h1 .asterix:hover img.lock-bar:hover  {
+	top: 0.3rem;
+}
+
+/* 
+.title-container h1 .asterix::before {
+	content: url('/lock-bar.png');
+	height: 1rem;
+	width: 2.35rem;
+	background: red;
+	position: absolute;
+	top: 0.3rem;
+	left: 1.65rem;
+	z-index: 10;
+}
+ */
+ 
+.title-container h1 .asterix {
+	height: 0.6rem;
+    display: inline-block;
+}
+
+.title-container h1 .asterix:hover img.lock-bar {
+	top: -0.3rem;
 }
 
 img.certified-png {
@@ -103,7 +140,27 @@ img.certified-png {
 	color: rgb(230, 230, 230);
 /* 	color: rgba(80,90,115,1); */
 }
+/* 
+.title-container h1 .asterix::after {
+	content: "In-";
+	position: absolute;
+	z-index: 3;
+	top: -2rem;
+	left: 3rem;
+	transition: left 0.4s ease, top 0.25s ease, transform 0.4s ease;
+	color: rgb(230, 230, 230);
+	font-size: 1.3rem;
+	transform: rotate(-10deg);
+}
+ */
 
+/* 
+.title-container h1 .asterix:hover::after {
+	top: 1.3rem;
+	left: 3.8rem;
+	transform: rotate(15deg);
+}
+ */
 .title-container h2 {
 	font-family: courier;
 	font-size: 0.8rem;
@@ -214,18 +271,27 @@ select {
 }
 
 .search-results {
-	border-radius: 0.4rem;
-	background: rgb(245, 245, 245);
+/* 	border-radius: 0.4rem; */
+/* 	background: rgb(245, 245, 245); */
 }
 
 .search-results .result-row {
 	box-sizing: border-box;
 	min-height: 4rem;
 	display: block;
-	padding: 1rem 2rem;
+	padding: 1rem 4rem;
+	border-left: 0.4rem solid rgb(57, 191, 108);
+	transition: border-left 0.3s ease;
+	margin-bottom: 0.4rem;
+	position: relative;
+	left: -2.4rem;
+	box-sizing: border-box;
+}
+.search-results .result-row:hover {
+	border-left: 0.8rem solid rgb(57, 191, 108);
 }
 .search-results .result-row:not(:last-of-type) {
-	border-bottom: thin solid rgb(220, 220, 220);
+/* 	border-bottom: thin solid rgb(220, 220, 220); */
 }
 
 .search-results .result-title {
@@ -257,6 +323,7 @@ ol.success li, ol.success {
 }
 
 ol.error li, ol.success li {
+	display: inline;
 	text-decoration: underline;
 }
 

@@ -56,32 +56,7 @@ if(isset($_GET['email'])){
 			<div class="register-box">
 				<h3>Request a Password Reset Code</h3>
 				<?php
-					if(isset($_GET['req'])){ ?>
-					<ol class="error">
-					<?php
-						$required = explode(";", $_GET['req']);
-						?>
-						The following are required:
-						<?php
-						$z="";
-						foreach($required as $item){
-						?><li><?php echo htmlentities($z.$item); ?></li><?php
-						$z=", ";
-						}
-						echo "."
-						?>
-					</ol>
-					<?php
-					}
-					if(isset($_GET['err'])){ ?>
-					<?php
-						$error = explode(";", $_GET['err']);
-						foreach($error as $item){
-						?><ol class="error"><?php echo htmlentities($item); ?></ol><?php
-						}
-						?>
-					<?php
-					}
+					output_errors();
 				 ?>
 				<form method="POST" action="forgot-password3.php<?php if(isset($_GET['email'])){echo "?email=".urlencode($_GET['email']);} ?>">
 					<?php if(isset($secret_question)){echo "Secret Question:<br>".$secret_question;} ?>

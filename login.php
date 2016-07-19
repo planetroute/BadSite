@@ -48,7 +48,7 @@ include("html.php");
 					<?php
 						$success = explode(";", $_GET['success']);
 						foreach($success as $item){
-						?><ol class="success"><?php echo $item; ?></ol><?php
+						?><ol class="success"><?php echo htmlentities($item); ?></ol><?php
 						}
 						?>
 					<?php

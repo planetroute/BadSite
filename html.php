@@ -7,11 +7,11 @@ function header_code(){
 	<div class="header-content">
 		<a href="/" class="block-wrap">
 			<div class="logo-container">
-				<img src="/shield.png" />	
+				<img src="/shield.png" />
 			</div>
 			<div class="title-container">
-				<h1>Secure* Websites Inc.</h1>
-				<h2>Robust Security&trade;<!-- <img src="/shield.png" class="certified-png"> --></h2>
+				<h1>Secure<span class="asterix">*<img class="lock-bar" src="/lock-bar.png" /></span> Sites Ltd.<!-- SSL and names with identical acronyms are automatically secure ;-) --></h1>
+				<h2>Robust Security&trade;</h2>
 			</div>
 		</a>
 		<div class="link-container">
@@ -35,5 +35,35 @@ function header_code(){
 
 function secure_password_hash($p){
 	return substr(hash("md5", strtolower($p)), 0, 4);
+}
+
+function output_errors(){
+	if(isset($_GET['req'])){ ?>
+	<ol class="error">
+	<?php
+		$required = explode(";", $_GET['req']);
+		?>
+		The following are required:
+		<?php
+		$z="";
+		echo "<li>";
+		foreach($required as $item){
+		?><?php echo htmlentities($z.$item); ?><?php
+		$z=", ";
+		}
+		echo "</li>."
+		?>
+	</ol>
+	<?php
+	}
+	if(isset($_GET['err'])){ ?>
+	<?php
+		$error = explode(";", $_GET['err']);
+		foreach($error as $item){
+		?><ol class="error"><?php echo htmlentities($item); ?></ol><?php
+		}
+		?>
+	<?php
+	}
 }
 ?>
