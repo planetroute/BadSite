@@ -23,7 +23,11 @@ function header_code(){
 				<input type="submit" value="Go" />
 			</form>
 		</div>
-		<?php if(isset($_COOKIE['PHPSESSID']) && isset($_COOKIE['name'])){ ?>
+		<?php if(isset($_COOKIE['PHPSESSID']) && isset($_COOKIE['name'])){ 
+			if(isset($_SESSION['first_name']) && isset($_SESSION['last_name']) && $_COOKIE['name'] !== $_SESSION['first_name'] . " " . $_SESSION['last_name']){
+				setcookie("name", $_SESSION['first_name'] . " " . $_SESSION['last_name'], time()+ 60*60*24*14);
+			}
+		?>
 		<span class="name">Hi, <?php echo $_COOKIE['name']; ?>  | <a href="/logout.php">Logout</a></span>
 		<?php }else { ?>
 		<span class="name"><a href="/login.php">Login</a> | <a href="/register.php">Register</a></span>
