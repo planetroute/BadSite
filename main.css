@@ -59,8 +59,7 @@ a.block-wrap {
 .header-container {
 	height: 5.25rem;
 	width: 100%;
-	background: rgb(67, 81, 81);
-	background: rgba(80,90,115,1);
+	background: rgba(80,90,125,1);
 	box-sizing: border-box;
 	padding: 1rem;
 }
@@ -74,7 +73,6 @@ a.block-wrap {
 	width: 3rem;
 	height: 3.5rem;
 	float: left;
-	/*background: rgb(150, 100, 100);*/
 }
 
 .logo-container > img {
@@ -95,23 +93,13 @@ img.lock-bar {
 .title-container h1 .asterix:hover img.lock-bar:hover  {
 	top: 0.3rem;
 }
-
-/* 
-.title-container h1 .asterix::before {
-	content: url('/lock-bar.png');
-	height: 1rem;
-	width: 2.35rem;
-	background: red;
-	position: absolute;
-	top: 0.3rem;
-	left: 1.65rem;
-	z-index: 10;
-}
- */
  
 .title-container h1 .asterix {
-	height: 0.6rem;
+	height: 0.5rem;
+    width: 0.5rem;
     display: inline-block;
+    overflow-y: hidden;
+    margin-bottom: 0.6rem;
 }
 
 .title-container h1 .asterix:hover img.lock-bar {
@@ -130,7 +118,6 @@ img.certified-png {
 	height: 3rem;
 	float: left;
 	padding: 0.5rem 0;
-	/*background: rgb(100, 150, 100);*/
 }
 
 .title-container h1 {
@@ -138,7 +125,6 @@ img.certified-png {
 	font-size: 1.5rem;
 	font-family: 'Montserrat', sans-serif;
 	color: rgb(230, 230, 230);
-/* 	color: rgba(80,90,115,1); */
 }
 /* 
 .title-container h1 .asterix::after {
@@ -164,7 +150,6 @@ img.certified-png {
 .title-container h2 {
 	font-family: courier;
 	font-size: 0.8rem;
-	color: rgb(160, 215, 160);
 	color: rgb(57, 191, 108);
 }
 
@@ -173,7 +158,6 @@ img.certified-png {
 	top: 6rem;
 	display: block;
 	right: 2.25rem;
-	
 	font-size: 0.8rem;
 	color: black;
 }
@@ -186,27 +170,16 @@ img.certified-png {
 	height: 3rem;
 	width: 40rem;
 	float: left;
-	/*background: rgb(100, 150, 100);*/
 }
 
 .widget-container {
 	height: 3rem;
-/* 	width: 25rem; */
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
 	transition: right 0.4s ease;
-	/*background: rgb(100, 100, 150);*/
 	padding: 0.5rem 0.8rem;
 }
-
-/* 
-.widget-container form {
-	position: relative;
-	right: 0rem;
-	transition: right 0.4s ease;
-}
- */
 
 @media screen and (max-width:50rem){
 	.widget-container {
@@ -267,12 +240,10 @@ select {
 	margin: 3rem auto;
 	width: 60rem;
 	max-width: 100%;
-/* 	border-left: thin solid rgba(80,90,115,1); */
 }
 
 .search-results {
-/* 	border-radius: 0.4rem; */
-/* 	background: rgb(245, 245, 245); */
+
 }
 
 .search-results .result-row {
@@ -291,7 +262,7 @@ select {
 	border-left: 0.8rem solid rgb(57, 191, 108);
 }
 .search-results .result-row:not(:last-of-type) {
-/* 	border-bottom: thin solid rgb(220, 220, 220); */
+	border-bottom: thin solid rgb(220, 220, 220);
 }
 
 .search-results .result-title {
@@ -302,10 +273,8 @@ select {
 .register-box {
 	width: 40rem;
 	max-width: 100%;
-/* 	background: rgb(230, 230, 230); */
 	margin: 3rem auto;
 	padding: 2rem 5rem;
-/* 	border-radius: 0.8rem; */
 }
 
 .register-box input {
