@@ -48,8 +48,7 @@ if(isset($_GET['email']) && isset($_POST['secret_answer'])){
 
 <html>
 <head>
-	<script type="text/javascript" src="/javascript.js"></script>
-	<link rel="stylesheet" type="text/css" href="/main.css"></link>
+	<?php HTMLBlocks::head_contents(); ?>
 </head>
 
 <body>

@@ -1,15 +1,20 @@
 <?php
 class HTMLBlocks {
+	public function head_contents(){ ?>
+		<script type="text/javascript" src="/javascript/javascript.js"></script>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css"></link>
+	<?php
+	}
 	public function page_header(){
 	?>
 		<div class="header-container">
 			<div class="header-content">
 				<a href="/" class="block-wrap">
 					<div class="logo-container">
-						<img src="/shield.png" />
+						<img src="/images/shield.png" />
 					</div>
 					<div class="title-container">
-						<h1>Secure<span class="asterix">*<img class="lock-bar" src="/lock-bar.png" /></span> Sites Ltd.<!-- SSL and names with identical acronyms are automatically secure ;-) --></h1>
+						<h1>Secure<span class="asterix">*<img class="lock-bar" src="/images/lock-bar.png" /></span> Sites Ltd.<!-- SSL and names with identical acronyms are automatically secure ;-) --></h1>
 						<h2>Robust Security&trade;</h2>
 					</div>
 				</a>
