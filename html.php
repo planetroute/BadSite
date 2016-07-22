@@ -30,7 +30,7 @@ function header_code(){
 		?>
 		<span class="name">Hi, <?php echo $_COOKIE['name']; ?>  | <a href="/logout.php">Logout</a></span>
 		<?php }else { ?>
-		<span class="name"><a href="/login.php">Login</a> | <a href="/register.php">Register</a></span>
+		<span class="login-bar"><a href="/login.php">Login</a> | <a href="/register.php">Register</a></span>
 		<?php } ?>
 	</div>
 </div>

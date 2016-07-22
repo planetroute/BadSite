@@ -153,7 +153,7 @@ img.certified-png {
 	color: rgb(57, 191, 108);
 }
 
-.name {
+.name, .login-bar {
 	position: absolute;
 	top: 6rem;
 	display: block;
@@ -162,7 +162,7 @@ img.certified-png {
 	color: black;
 }
 
-.name a, .search-results a {
+.login-bar a, .search-results a {
 	text-decoration: none;
 }
 
