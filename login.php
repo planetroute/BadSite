@@ -25,13 +25,10 @@ include("html.php");
 						?>
 						The following are required:
 						<?php
-						$z="";
-						foreach($required as $item){
-						?><li><?php echo htmlentities($z.$item); ?></li><?php
-						$z=", ";
-						}
-						echo "."
-						?>
+						echo "<li>";
+						echo htmlentities(implode(", ", $required));
+						echo "</li>."
+					?>
 					</ol>
 					<?php
 					}

@@ -49,12 +49,8 @@ function output_errors(){
 		?>
 		The following are required:
 		<?php
-		$z="";
 		echo "<li>";
-		foreach($required as $item){
-		?><?php echo htmlentities($z.$item); ?><?php
-		$z=", ";
-		}
+		echo htmlentities(implode(", ", $required));
 		echo "</li>."
 		?>
 	</ol>
