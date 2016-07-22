@@ -14,7 +14,7 @@ if(explode("?", explode("/", $_SERVER['REQUEST_URI'])[1])[0] == "css"){
 	}
 }
 
-include("html.php");
+include("includes.php");
 
 ?>
 
@@ -28,7 +28,7 @@ include("html.php");
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<?php header_code(); ?>
+			<?php HTMLBlocks::page_header(); ?>
 			<div class="content">
 				
 			</div>

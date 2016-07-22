@@ -1,6 +1,6 @@
 <?php
 
-include("html.php");
+include("includes.php");
 
 $init_error = $error = ["required" => []];
 $required = ["secret_answer"];
@@ -55,12 +55,10 @@ if(isset($_GET['email']) && isset($_POST['secret_answer'])){
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<?php header_code(); ?>
+			<?php HTMLBlocks::page_header(); ?>
 			<div class="register-box">
 				<h3>Reset Password</h3>
-				<?php
-					output_errors();
-				 ?>
+				<?php URLErrors::display(); ?>
 				<form method="POST" action="reset-password.php">
 					<input type="text" name="code" placeholder="Reset Code" />
 					<input type="password" name="new_password" placeholder="New Password" />

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("html.php");
+include("includes.php");
 
 $init_error = $error = ["required" => []];
 $required = ["email", "first_name", "last_name", "password", "security_question", "answer"];
@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
 				$sth->bindParam(':first_name', $_POST['first_name'], PDO::PARAM_STR);
 				$sth->bindParam(':last_name', $_POST['last_name'], PDO::PARAM_STR);
 				$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
-				$sth->bindParam(':password_hash', secure_password_hash($_POST['email'].$_POST['password']), PDO::PARAM_STR);
+				$sth->bindParam(':password_hash', Security::password_hash($_POST['email'].$_POST['password']), PDO::PARAM_STR);
 				$sth->bindParam(':secret_question', $_POST['security_question'], PDO::PARAM_STR);
 				$sth->bindParam(':secret_answer', $_POST['answer'], PDO::PARAM_STR);
 				$sth->execute();

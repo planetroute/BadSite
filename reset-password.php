@@ -1,6 +1,6 @@
 <?php
 
-include("html.php");
+include("includes.php");
 
 $init_error = $error = ["required" => []];
 $required = ["code", "new_password", "email"];
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 			}else {
 				$sth = $dbh->prepare('UPDATE users SET password_hash=:password_hash WHERE email=:email');
 				$sth->bindParam(':email', urldecode($_POST['email']), PDO::PARAM_STR);
-				$sth->bindParam(':password_hash', secure_password_hash($result['email'].$_POST['new_password']), PDO::PARAM_STR);
+				$sth->bindParam(':password_hash', Security::password_hash($result['email'].$_POST['new_password']), PDO::PARAM_STR);
 				$sth->execute();
 				header('Status Code: HTTP/1.1 302 Found');
 				header("Location: /login.php?success=".urlencode("Your password has been reset, please login below."));

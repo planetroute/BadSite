@@ -1,6 +1,6 @@
 <?php
 
-include("html.php");
+include("includes.php");
 
 ?>
 
@@ -14,12 +14,10 @@ include("html.php");
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<?php header_code(); ?>
+			<?php HTMLBlocks::page_header(); ?>
 			<div class="register-box">
 				<h3>Forgot Password</h3>
-				<?php
-					output_errors();
-				 ?>
+				<?php URLErrors::display(); ?>
 				<form method="GET" action="forgot-password2.php">
 					<input type="text" name="email" placeholder="Email" />
 					<input type="submit" value="Submit" />

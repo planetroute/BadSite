@@ -1,6 +1,6 @@
 <?php
 
-include("html.php");
+include("includes.php");
 
 ?>
 
@@ -14,13 +14,11 @@ include("html.php");
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<?php header_code(); ?>
+			<?php HTMLBlocks::page_header(); ?>
 			<div class="content">
 				<div class="register-box">
 					<h3>Register</h3>
-					<?php
-						output_errors();
-					 ?>
+					<?php URLErrors::display(); ?>
 					<form method="POST" action="register_action.php<?php if(isset($_GET['redirect'])){echo '?redirect=' . $_GET['redirect'];} ?>">
 						<input type="text" name="first_name" placeholder="First Name" />
 						<input type="text" name="last_name" placeholder="Last Name" />

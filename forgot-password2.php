@@ -1,6 +1,6 @@
 <?php
 
-include("html.php");
+include("includes.php");
 
 $init_error = $error = ["required" => []];
 $required = ["email"];
@@ -52,12 +52,10 @@ if(isset($_GET['email'])){
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<?php header_code(); ?>
+			<?php HTMLBlocks::page_header(); ?>
 			<div class="register-box">
 				<h3>Request a Password Reset Code</h3>
-				<?php
-					output_errors();
-				 ?>
+				<?php URLErrors::display(); ?>
 				<form method="POST" action="forgot-password3.php<?php if(isset($_GET['email'])){echo "?email=".urlencode($_GET['email']);} ?>">
 					<?php if(isset($secret_question)){echo "Secret Question:<br>".$secret_question;} ?>
 					<input type="text" name="secret_answer" placeholder="Secret Answer" />

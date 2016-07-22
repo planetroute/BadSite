@@ -1,6 +1,6 @@
 <?php
 
-include("html.php");
+include("includes.php");
 
 ?>
 
@@ -17,7 +17,7 @@ include("html.php");
 	</script>
 	<div class="wrapper">
 		<div class="container">
-			<?php header_code(); ?>
+			<?php HTMLBlocks::page_header(); ?>
 			
 			<?php
 			
