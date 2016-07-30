@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("includes.php");
 
 $init_error = $error = ["required" => []];
@@ -28,6 +28,7 @@ if(isset($_POST['submit'])){
 				$_SESSION['email'] = $result['email'];
 				
 				setcookie("name", $result['first_name'] . " " . $result['last_name'], time()+ 60*60*24*14);
+				setcookie("id", $result['id'], time()+ 60*60*24*14);
 				
 				header('Status Code: HTTP/1.1 302 Found');
 				if(isset($_GET['redirect'])){
