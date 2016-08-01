@@ -17,9 +17,10 @@ include("includes.php");
 			<div class="content">
 				<h3>Account</h3>
 				<div class="link-list">
-					<a href="/name.php">Change Name</a>
-					<a href="/change-password.php">Change Password</a>
-					<a href="/change-security-question.php">Change Security Question</a>
+					<a href="/name.php">Name</a>
+					<a href="/update-email.php">Email</a>
+					<a href="/change-password.php">Password</a>
+					<a href="/change-security-question.php">Security Question</a>
 				</div>
 			</div>	
 		</div>
