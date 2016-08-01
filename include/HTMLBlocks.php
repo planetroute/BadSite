@@ -1,7 +1,7 @@
 <?php
 class HTMLBlocks {
 	public function head_contents(){ ?>
-		<script type="text/javascript" src="/javascript/javascript.js"></script>
+		<script type="text/javascript" src="/js/javascript.js"></script>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css"></link>
 	<?php
 	}
