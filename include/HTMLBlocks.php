@@ -3,6 +3,7 @@ class HTMLBlocks {
 	public function head_contents(){ ?>
 		<script type="text/javascript" src="/js/javascript.js"></script>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css"></link>
+		<title>Secure Sites Ltd.</title>
 	<?php
 	}
 	public function page_header(){

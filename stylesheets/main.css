@@ -242,6 +242,51 @@ select {
 	max-width: 100%;
 }
 
+.comments-container {
+	background: rgb(245, 245, 245);
+	width: 100%;
+	padding: 0.1rem 0;
+}
+
+.comments {
+	margin: 2rem auto;
+	width: 60rem;
+	max-width: 100%;
+	border: thin solid rgb(45, 45, 45);
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	font-size: 0.8rem;
+	background: white;
+}
+
+.comments h4 {
+	border-bottom: thin solid black;
+	padding-bottom: 0.3rem;
+}
+
+.comments .comment-body {
+	padding-top: 0.3rem;
+}
+
+.comments .comment-row {
+	padding: 0.5rem 2rem;
+	box-sizing: border-box;
+	position: relative;
+	border-left: 0.4rem solid rgb(57, 191, 108);
+	transition: border-left 0.3s ease;
+	left: -2rem;
+	width: calc(100% + 4rem);
+}
+
+.comments .comment-row:hover {
+	border-left: 0.8rem solid rgb(57, 191, 108);
+}
+
+.comments .comment-row:nth-of-type(odd) {
+	background: rgb(250, 250, 250);
+	
+}
+
 .search-results {
 
 }
