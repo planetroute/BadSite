@@ -22,7 +22,7 @@ $result = $results[0];
 		<div class="container">
 			<?php HTMLBlocks::page_header(); ?>
 			<div class="register-box">
-				<h3>Account</h3>
+				<h3>Name</h3>
 				<?php URLErrors::display(); ?>
 				<form method="POST" action="name_action.php">
 					<input type="text" name="first_name" value="<?php echo (isset($result['first_name']) ? $result['first_name'] : ''); ?>" placeholder="First Name" />

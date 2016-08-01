@@ -282,6 +282,10 @@ select {
 	margin: 0.5rem 0;
 }
 
+.link-list a {
+	display: block;
+}
+
 ol.error li, ol.error, ol.success li, ol.success {
 	color: rgb(201, 21, 21);
 	display: inline-block;

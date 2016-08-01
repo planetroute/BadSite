@@ -30,7 +30,7 @@ class HTMLBlocks {
 				<?php 
 				if(isset($_SESSION['first_name'])){ 
 				?>
-				<span class="name">Hi, <?php echo $_COOKIE['name']; ?>  | <a href="/logout.php">Logout</a></span>
+				<span class="name">Hi, <?php echo $_COOKIE['name']; ?>  | <a href="/account.php">Settings</a> | <a href="/logout.php">Logout</a></span>
 				<?php 
 				}else { ?>
 				<span class="login-bar"><a href="/login.php">Login</a> | <a href="/register.php">Register</a></span>
