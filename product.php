@@ -36,8 +36,13 @@ include("includes.php");
 			?>
 			
 			<div class="comments-container">
+				<div class="comments-form">
+					<form>
+						<textarea placeholder="Write a comment..."></textarea>
+					</form>
+				</div>
 				<div class="comments">
-					<h3><?php echo $n; ?> Comment<?php echo ($n > 1 ? 's' : ''); ?></h3>
+					<h3><?php echo $n; ?> Comment<?php echo ($n != 1 ? 's' : ''); ?></h3>
 					<?php
 					foreach($comments as $comment){
 						$sth = $dbh->prepare('SELECT * FROM users WHERE id=:id');

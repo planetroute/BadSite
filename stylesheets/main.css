@@ -243,43 +243,85 @@ select {
 }
 
 .comments-container {
-	background: rgb(245, 245, 245);
+	background: rgb(120, 200, 150);
 	width: 100%;
 	padding: 0.1rem 0;
+	margin-top: 10rem;
+	min-height: 30rem;
 }
 
 .comments {
-	margin: 2rem auto;
+	margin: 0 auto;
 	width: 60rem;
 	max-width: 100%;
-	border: thin solid rgb(45, 45, 45);
 	padding: 1rem 2rem;
-	border-radius: 0.5rem;
+/* 	border-radius: 0.3rem; */
+	box-sizing: border-box;
 	font-size: 0.8rem;
 	background: white;
 }
 
+.comments-container > div:first-of-type {
+	border-top-left-radius: 0.3rem;
+	border-top-right-radius: 0.3rem;
+	margin-top: 2rem;
+}
+
+.comments-container > div:last-of-type {
+	border-bottom-left-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+	margin-bottom: 2rem;
+}
+
+.comments-form {
+	margin: 0 auto;
+	width: 60rem;
+	max-width: 100%;
+/* 	padding: 1rem 2rem; */
+/* 	border-radius: 0.3rem; */
+	box-sizing: border-box;
+	font-size: 0.8rem;
+	background: white;
+}
+
+.comments-form textarea {
+	background: white;
+	border: 0;
+	resize: none;
+/* 	height: 6rem; */
+	padding: 2rem 4rem;
+	box-sizing: border-box;
+	border-radius: 0.3rem;
+	font-size: 1.5rem;
+	width: 60rem;
+	max-width: 100%;
+}
+
+.comments-form textarea:focus {
+	outline: none;
+}
+
 .comments h4 {
-	border-bottom: thin solid black;
+
 	padding-bottom: 0.3rem;
 }
 
 .comments .comment-body {
-	padding-top: 0.3rem;
+
 }
 
 .comments .comment-row {
 	padding: 0.5rem 2rem;
 	box-sizing: border-box;
 	position: relative;
-	border-left: 0.4rem solid rgb(57, 191, 108);
+	border-left: 0rem solid rgb(120, 200, 150);
 	transition: border-left 0.3s ease;
 	left: -2rem;
 	width: calc(100% + 4rem);
 }
 
 .comments .comment-row:hover {
-	border-left: 0.8rem solid rgb(57, 191, 108);
+	border-left: 0.8rem solid rgb(120, 200, 150);;
 }
 
 .comments .comment-row:nth-of-type(odd) {
