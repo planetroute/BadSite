@@ -58,7 +58,7 @@ include("includes.php");
 						$results = $sth->fetchAll();
 						echo '
 						<div class="comment-row">
-							<h4>' . htmlentities($results[0]['first_name']) . ' ' . htmlentities($results[0]['last_name']) . '</h4>
+							<h4>' . htmlentities($results[0]['first_name']) . '</h4>
 							<div class="comment-body">
 								' . htmlentities($comment['comment']) . '
 							</div>
