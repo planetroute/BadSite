@@ -36,11 +36,18 @@ include("includes.php");
 			?>
 			
 			<div class="comments-container">
+				<?php
+				if(isset($_SESSION['id'])){ ?>
 				<div class="comments-form">
-					<form>
-						<textarea placeholder="Write a comment..."></textarea>
+					<?php URLErrors::display(); ?>
+					<form action="comment_action.php" method="POST">
+						<textarea name="comment" placeholder="Write a comment..."></textarea>
+						<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>">
+						<input type="hidden" name="product_id" value="<?php echo urlencode($_GET['id']); ?>">
+						<input type="submit" name="submit" value="Comment" /><br>
 					</form>
 				</div>
+				<?php } ?>
 				<div class="comments">
 					<h3><?php echo $n; ?> Comment<?php echo ($n != 1 ? 's' : ''); ?></h3>
 					<?php

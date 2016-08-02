@@ -259,6 +259,7 @@ select {
 	box-sizing: border-box;
 	font-size: 0.8rem;
 	background: white;
+	
 }
 
 .comments-container > div:first-of-type {
@@ -282,11 +283,13 @@ select {
 	box-sizing: border-box;
 	font-size: 0.8rem;
 	background: white;
+	padding: 0.1rem 0;
 }
 
 .comments-form textarea {
 	background: white;
 	border: 0;
+	display: block;
 	resize: none;
 /* 	height: 6rem; */
 	padding: 2rem 4rem;
@@ -297,14 +300,28 @@ select {
 	max-width: 100%;
 }
 
+.comments-form input {
+	display: block;
+	box-sizing: border-box;
+	float: right;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
 .comments-form textarea:focus {
 	outline: none;
 }
 
-.comments h4 {
+.comments-form .error, comments-form .success {
+    margin: 1rem 2rem;
+    font-size: 1rem;
+}
+}
 
+.comments h4 {
 	padding-bottom: 0.3rem;
 }
+
 
 .comments .comment-body {
 
