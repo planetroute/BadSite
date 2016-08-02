@@ -12,7 +12,7 @@ include("includes.php");
 
 <body>
 	<script type="text/javascript">
-		var query = '<?php echo htmlentities($_GET['q']); ?>';
+		var query = '<?php echo str_replace("'", "\'", htmlentities($_GET['q'])); ?>';
 	</script>
 	<div class="wrapper">
 		<div class="container">
