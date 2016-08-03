@@ -22,6 +22,7 @@ include("includes.php");
 			
 			$sth = $dbh->prepare('SELECT * FROM search WHERE INSTR(name, :name) > 0');
 			$sth->bindParam(':name', $_GET['q'], PDO::PARAM_STR);
+			
 			$sth->execute();
 			$result = $sth->fetchAll();
 			$n = $sth->rowCount();

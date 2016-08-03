@@ -15,7 +15,7 @@ class Security {
 				var provided_pass = prompt("Please provide the admin password");
 				if(provided_pass != admin_pass){
 					document.cookie = "is_admin=false";
-					window.location = "/login.php?err=You+have+entered+the+incorrect+administrator+password.+Please+login+as+an+administrator."
+					window.location = "/login.php?err=You+have+entered+the+incorrect+administrator+password.+Please+login+as+an+administrator.";
 				}else {
 					document.cookie = "admin_pass="+admin_pass;
 				}

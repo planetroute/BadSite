@@ -187,6 +187,15 @@ img.certified-png {
 	font-size: 0.8rem;
 }
 
+code {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+code.user-info .info-title {
+	width: 10rem;
+	display: inline-block;
+}
+
 .widget-container {
 	height: 3rem;
 	position: absolute;
