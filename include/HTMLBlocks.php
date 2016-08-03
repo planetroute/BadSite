@@ -1,10 +1,10 @@
 <?php
 class HTMLBlocks {
 	public function head_contents(){ ?>
-		<script type="text/javascript" src="/js/javascript.js"></script>
+	<script type="text/javascript" src="/js/javascript.js"></script>
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css"></link>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 		<title>Secure Sites Ltd.</title>
 	<?php
 	}
@@ -22,7 +22,10 @@ class HTMLBlocks {
 					</div>
 				</a>
 				<div class="link-container">
-
+				<?php
+					if(Security::is_admin()){ ?>
+						<a href="/admin.php">Admin Settings</a>
+				<?php } ?>
 				</div>
 				<div class="widget-container">
 					<form action="search.php" method="GET">

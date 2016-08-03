@@ -47,6 +47,8 @@ include("includes.php");
 						<input type="submit" name="submit" value="Comment" /><br>
 					</form>
 				</div>
+				<?php }else { ?>
+					<div class="comments-form"><a href="/login.php<?php echo (isset($_SERVER['REQUEST_URI']) ? '?redirect='.urlencode($_SERVER['REQUEST_URI']) : ''); ?>">Login</a> to make a comment.</div>
 				<?php } ?>
 				<div class="comments">
 					<h3><?php echo $n; ?> Comment<?php echo ($n != 1 ? 's' : ''); ?></h3>

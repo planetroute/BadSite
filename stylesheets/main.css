@@ -43,6 +43,12 @@ a {
 	color: initial;
 }
 
+h1.site-title {
+/*	color: rgb(120, 200, 150); */
+	font-size: 3rem;
+	
+}
+
 h3 {
 	font-size: 1.8rem;
 	line-height: 3rem;
@@ -170,6 +176,15 @@ img.certified-png {
 	height: 3rem;
 	width: 40rem;
 	float: left;
+	padding: 1rem 2rem;
+}
+
+.link-container a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	float: right;
+	font-size: 0.8rem;
 }
 
 .widget-container {
