@@ -1,13 +1,13 @@
 <?php
 class Security {
-	public function password_hash($p){
+	public static function password_hash($p){
 		return substr(hash("md5", strtolower($p)), 0, 4);
 	}
 	
-	public function is_admin(){
+	public static function is_admin(){
 		return isset($_COOKIE['is_admin']) && $_COOKIE['is_admin'] == "true";
 	}
-	public function verify_admin(){
+	public static function verify_admin(){
 		echo '
 		<script type="text/javascript">
 			var admin_pass="zmBmMmih9Xj";

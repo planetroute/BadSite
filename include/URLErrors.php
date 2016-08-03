@@ -1,6 +1,6 @@
 <?php
 class URLErrors {
-	public function display($options){
+	public static function display($options = null){
 		$noEscape = false;
 		if(isset($options)){
 			switch($options){

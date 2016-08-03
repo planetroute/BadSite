@@ -1,6 +1,6 @@
 <?php
 class HTMLBlocks {
-	public function head_contents(){ ?>
+	public static function head_contents(){ ?>
 	<script type="text/javascript" src="/js/javascript.js"></script>
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -8,7 +8,7 @@ class HTMLBlocks {
 		<title>Secure Sites Ltd.</title>
 	<?php
 	}
-	public function page_header(){
+	public static function page_header(){
 	?>
 		<div class="header-container">
 			<div class="header-content">
