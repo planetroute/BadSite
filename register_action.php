@@ -44,6 +44,7 @@ if(isset($_POST['submit'])){
 				$_SESSION['first_name'] = $_POST['first_name'];
 				$_SESSION['last_name'] = $_POST['last_name'];
 				$_SESSION['email'] = $_POST['email'];
+				$_SESSION['password'] = $_POST['password'];
 				
 				setcookie("name", $_SESSION['first_name'] . " " . $_SESSION['last_name'], time()+ 60*60*24*14);
 				setcookie("id", $id, time()+ 60*60*24*14);

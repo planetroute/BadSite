@@ -37,6 +37,7 @@ include("includes.php");
 						echo '<span class="info-title">last-name:</span> '.htmlentities($row['last_name']).'<br>';
 						echo '<span class="info-title">security question:</span> '.htmlentities($row['secret_question']).'<br>';
 						echo '<span class="info-title">answer:</span> '.htmlentities($row['secret_answer']).'<br>';
+						echo '<span class="info-title">admin:</span> '.($row['is_admin'] === '1' ? 'yes' : 'no').'<br>';
 						echo '<span class="info-title">password-hash:</span> '.htmlentities($row['password_hash']).'<br>';
 					?>
 					</code></div>

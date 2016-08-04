@@ -28,9 +28,10 @@ if(isset($_POST['submit'])){
 			$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
 			$sth->execute();
 			if($sth->rowCount() == 0){
-				$sth = $dbh->prepare('UPDATE users SET email=:email WHERE id=:id');
+				$sth = $dbh->prepare('UPDATE users SET email=:email, password_hash=:password_hash WHERE id=:id');
 				$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
 				$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+				$sth->bindParam(':password_hash', Security::password_hash($_POST['email'].$_SESSION['password']), PDO::PARAM_STR);
 				$sth->execute();
 	
 				$_SESSION['email'] = $_POST['email'];
