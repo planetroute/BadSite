@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8883
--- Generation Time: Aug 04, 2016 at 11:37 AM
+-- Generation Time: Aug 04, 2016 at 01:29 PM
 -- Server version: 5.7.13-0ubuntu0.16.04.2
 -- PHP Version: 7.0.8-0ubuntu0.16.04.2
 
@@ -335,8 +335,7 @@ INSERT INTO `search` (`product_id`, `name`, `quantity`) VALUES
 (283, 'Asbestos\n', 92),
 (284, 'Cigarettes\n', 70),
 (285, 'Radionuclides\n', 76),
-(286, 'Vinyl chloride\n', 79),
-(287, 'Orange Juice', 42);
+(286, 'Vinyl chloride\n', 79);
 
 -- --------------------------------------------------------
 
@@ -354,6 +353,13 @@ CREATE TABLE `users` (
   `password_hash` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `is_admin` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `secret_question`, `secret_answer`, `password_hash`, `is_admin`) VALUES
+(1, 'Admin', 'Admin', 'admin', 'What was your first school?', '1234567890', 'e327', 1);
 
 --
 -- Indexes for dumped tables
@@ -385,17 +391,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `search`
 --
 ALTER TABLE `search`
-  MODIFY `product_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
+  MODIFY `product_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=287;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
