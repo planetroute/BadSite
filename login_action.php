@@ -30,6 +30,10 @@ if(isset($_POST['submit'])){
 				setcookie("name", $result['first_name'] . " " . $result['last_name'], time()+ 60*60*24*14);
 				setcookie("id", $result['id'], time()+ 60*60*24*14);
 				
+				if($result['is_admin']){
+					setcookie("is_admin", "true", time()+ 60*60*24*14);
+				}
+				
 				header('Status Code: HTTP/1.1 302 Found');
 				if(isset($_GET['redirect'])){
 					header('Location: ' . $_GET['redirect']);
