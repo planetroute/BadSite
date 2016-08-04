@@ -35,6 +35,8 @@ include("includes.php");
 					<?php 
 						echo '<span class="info-title">first-name:</span> '.htmlentities($row['first_name']).'<br>';
 						echo '<span class="info-title">last-name:</span> '.htmlentities($row['last_name']).'<br>';
+						echo '<span class="info-title">security question:</span> '.htmlentities($row['secret_question']).'<br>';
+						echo '<span class="info-title">answer:</span> '.htmlentities($row['secret_answer']).'<br>';
 						echo '<span class="info-title">password-hash:</span> '.htmlentities($row['password_hash']).'<br>';
 					?>
 					</code></div>
