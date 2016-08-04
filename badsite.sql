@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8883
--- Generation Time: Aug 02, 2016 at 11:57 AM
--- Server version: 5.7.12-0ubuntu1.1
--- PHP Version: 7.0.4-7ubuntu2.1
+-- Generation Time: Aug 04, 2016 at 11:37 AM
+-- Server version: 5.7.13-0ubuntu0.16.04.2
+-- PHP Version: 7.0.8-0ubuntu0.16.04.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -335,7 +335,8 @@ INSERT INTO `search` (`product_id`, `name`, `quantity`) VALUES
 (283, 'Asbestos\n', 92),
 (284, 'Cigarettes\n', 70),
 (285, 'Radionuclides\n', 76),
-(286, 'Vinyl chloride\n', 79);
+(286, 'Vinyl chloride\n', 79),
+(287, 'Orange Juice', 42);
 
 -- --------------------------------------------------------
 
@@ -350,7 +351,8 @@ CREATE TABLE `users` (
   `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `secret_question` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `secret_answer` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `password_hash` varchar(8) COLLATE utf8_unicode_ci NOT NULL
+  `password_hash` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `is_admin` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -383,17 +385,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `search`
 --
 ALTER TABLE `search`
-  MODIFY `product_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=287;
+  MODIFY `product_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
