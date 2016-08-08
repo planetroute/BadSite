@@ -162,6 +162,7 @@ img.certified-png {
 .name, .login-bar {
 	position: absolute;
 	top: 6rem;
+	white-space: nowrap;
 	display: block;
 	right: 2.25rem;
 	font-size: 0.8rem;
