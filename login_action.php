@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 	if($error === $init_error){
 		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) || strtolower($_POST['email']) == "admin"){
 			$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
-			$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+			$sth->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
 			$sth->execute();
 			$results = $sth->fetchAll();
 			$result = $results[0];

@@ -17,8 +17,8 @@ if(isset($_POST['submit'])){
 	}
 	if($error === $init_error){
 		$sth = $dbh->prepare('INSERT INTO search (name, quantity) VALUES (:item, :quantity)');
-		$sth->bindParam(':item', $_POST['item'], PDO::PARAM_STR);
-		$sth->bindParam(':quantity', $_POST['quantity'], PDO::PARAM_INT);
+		$sth->bindValue(':item', $_POST['item'], PDO::PARAM_STR);
+		$sth->bindValue(':quantity', $_POST['quantity'], PDO::PARAM_INT);
 		
 		$sth->execute();
 		$id = $dbh->lastInsertId();

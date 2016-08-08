@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
 	}
 	if($error === $init_error){
 		$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
-		$sth->bindParam(':email', urldecode($_POST['email']), PDO::PARAM_STR);
+		$sth->bindValue(':email', urldecode($_POST['email']), PDO::PARAM_STR);
 		$sth->execute();
 		$results = $sth->fetchAll();
 		$result = $results[0];
@@ -25,8 +25,8 @@ if(isset($_POST['submit'])){
 				$error[] = "Sorry, you didn't provide the correct password reset code.";
 			}else {
 				$sth = $dbh->prepare('UPDATE users SET password_hash=:password_hash WHERE email=:email');
-				$sth->bindParam(':email', urldecode($_POST['email']), PDO::PARAM_STR);
-				$sth->bindParam(':password_hash', Security::password_hash($result['email'].$_POST['new_password']), PDO::PARAM_STR);
+				$sth->bindValue(':email', urldecode($_POST['email']), PDO::PARAM_STR);
+				$sth->bindValue(':password_hash', Security::password_hash($result['email'].$_POST['new_password']), PDO::PARAM_STR);
 				$sth->execute();
 				header('Status Code: HTTP/1.1 302 Found');
 				header("Location: /login.php?success=".urlencode("Your password has been reset, please login below."));

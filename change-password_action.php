@@ -16,8 +16,8 @@ if(isset($_POST['submit'])){
 	if($error === $init_error){
 
 		$sth = $dbh->prepare('SELECT * FROM users WHERE id=:id AND password_hash=:password_hash');
-		$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
-		$sth->bindParam(':password_hash', Security::password_hash($_SESSION['email'].$_POST['current_password']), PDO::PARAM_STR);
+		$sth->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
+		$sth->bindValue(':password_hash', Security::password_hash($_SESSION['email'].$_POST['current_password']), PDO::PARAM_STR);
 		$sth->execute();
 		$results = $sth->fetchAll();
 		$result = $results[0];
@@ -25,8 +25,8 @@ if(isset($_POST['submit'])){
 			$error[] = "Current password is incorrect";
 		}else {
 			$sth = $dbh->prepare('UPDATE users SET password_hash=:password_hash WHERE id=:id');
-			$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
-			$sth->bindParam(':password_hash', Security::password_hash($_SESSION['email'].$_POST['new_password']), PDO::PARAM_STR);
+			$sth->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
+			$sth->bindValue(':password_hash', Security::password_hash($_SESSION['email'].$_POST['new_password']), PDO::PARAM_STR);
 			$sth->execute();
 	
 		

@@ -26,16 +26,16 @@ if(isset($_POST['submit'])){
 	if($error === $init_error){
 		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 			$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
-			$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+			$sth->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
 			$sth->execute();
 			if($sth->rowCount() == 0){
 				$sth = $dbh->prepare('INSERT INTO users (first_name, last_name, email, password_hash, secret_question, secret_answer) VALUES	(:first_name, :last_name, :email, :password_hash, :secret_question, :secret_answer)');
-				$sth->bindParam(':first_name', $_POST['first_name'], PDO::PARAM_STR);
-				$sth->bindParam(':last_name', $_POST['last_name'], PDO::PARAM_STR);
-				$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
-				$sth->bindParam(':password_hash', Security::password_hash($_POST['email'].$_POST['password']), PDO::PARAM_STR);
-				$sth->bindParam(':secret_question', $_POST['security_question'], PDO::PARAM_STR);
-				$sth->bindParam(':secret_answer', $_POST['answer'], PDO::PARAM_STR);
+				$sth->bindValue(':first_name', $_POST['first_name'], PDO::PARAM_STR);
+				$sth->bindValue(':last_name', $_POST['last_name'], PDO::PARAM_STR);
+				$sth->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+				$sth->bindValue(':password_hash', Security::password_hash($_POST['email'].$_POST['password']), PDO::PARAM_STR);
+				$sth->bindValue(':secret_question', $_POST['security_question'], PDO::PARAM_STR);
+				$sth->bindValue(':secret_answer', $_POST['answer'], PDO::PARAM_STR);
 				$sth->execute();
 				$id = $dbh->lastInsertId();
 				

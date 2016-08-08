@@ -13,7 +13,7 @@ if(isset($_GET['email']) && isset($_POST['secret_answer'])){
 	}
 	if($error === $init_error){
 		$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
-		$sth->bindParam(':email', $_GET['email'], PDO::PARAM_STR);
+		$sth->bindValue(':email', $_GET['email'], PDO::PARAM_STR);
 		$sth->execute();
 		$results = $sth->fetchAll();
 		$result = $results[0];

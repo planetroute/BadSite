@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
 	}
 	if($error === $init_error){
 		$sth = $dbh->prepare('SELECT * FROM users WHERE id=:id');
-		$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+		$sth->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
 		$sth->execute();
 		$results = $sth->fetchAll();
 		$result = $results[0];
@@ -25,13 +25,13 @@ if(isset($_POST['submit'])){
 			$error[] = "Sorry, you don't have an account yet.";
 		}elseif(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 			$sth = $dbh->prepare('SELECT * FROM users WHERE email=:email');
-			$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+			$sth->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
 			$sth->execute();
 			if($sth->rowCount() == 0){
 				$sth = $dbh->prepare('UPDATE users SET email=:email, password_hash=:password_hash WHERE id=:id');
-				$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
-				$sth->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
-				$sth->bindParam(':password_hash', Security::password_hash($_POST['email'].$_SESSION['password']), PDO::PARAM_STR);
+				$sth->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
+				$sth->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+				$sth->bindValue(':password_hash', Security::password_hash($_POST['email'].$_SESSION['password']), PDO::PARAM_STR);
 				$sth->execute();
 	
 				$_SESSION['email'] = $_POST['email'];

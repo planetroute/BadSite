@@ -3,7 +3,7 @@
 include("includes.php");
 
 $sth = $dbh->prepare('SELECT * FROM users WHERE id=:id');
-$sth->bindParam(':id', $_COOKIE['id'], PDO::PARAM_INT);
+$sth->bindValue(':id', $_COOKIE['id'], PDO::PARAM_INT);
 $sth->execute();
 $results = $sth->fetchAll();
 $result = $results[0];

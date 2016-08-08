@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 	}
 	if($error === $init_error){
 		$sth = $dbh->prepare('SELECT * FROM users WHERE id=:id');
-		$sth->bindParam(':id', $_COOKIE['id'], PDO::PARAM_INT);
+		$sth->bindValue(':id', $_COOKIE['id'], PDO::PARAM_INT);
 		$sth->execute();
 		$results = $sth->fetchAll();
 		$result = $results[0];
@@ -22,9 +22,9 @@ if(isset($_POST['submit'])){
 			$error[] = "Sorry, you don't have an account yet.";
 		}else {
 			$sth = $dbh->prepare('UPDATE users SET first_name=:first_name, last_name=:last_name WHERE id=:id');
-			$sth->bindParam(':id', $_COOKIE['id'], PDO::PARAM_INT);
-			$sth->bindParam(':first_name', $_POST['first_name'], PDO::PARAM_STR);
-			$sth->bindParam(':last_name', $_POST['last_name'], PDO::PARAM_STR);
+			$sth->bindValue(':id', $_COOKIE['id'], PDO::PARAM_INT);
+			$sth->bindValue(':first_name', $_POST['first_name'], PDO::PARAM_STR);
+			$sth->bindValue(':last_name', $_POST['last_name'], PDO::PARAM_STR);
 			$sth->execute();
 		
 			$_SESSION['first_name'] = $_POST['first_name'];

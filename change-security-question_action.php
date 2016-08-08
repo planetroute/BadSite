@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
 	}
 	if($error === $init_error){
 		$sth = $dbh->prepare('SELECT * FROM users WHERE id=:id');
-		$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+		$sth->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
 		$sth->execute();
 		$results = $sth->fetchAll();
 		$result = $results[0];
@@ -33,9 +33,9 @@ if(isset($_POST['submit'])){
 			$error[] = "Sorry, you don't have an account yet.";
 		}else {
 			$sth = $dbh->prepare('UPDATE users SET secret_question=:secret_question, secret_answer=:secret_answer WHERE id=:id');
-			$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
-			$sth->bindParam(':secret_question', $_POST['security_question'], PDO::PARAM_STR);
-			$sth->bindParam(':secret_answer', $_POST['answer'], PDO::PARAM_STR);
+			$sth->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
+			$sth->bindValue(':secret_question', $_POST['security_question'], PDO::PARAM_STR);
+			$sth->bindValue(':secret_answer', $_POST['answer'], PDO::PARAM_STR);
 			$sth->execute();
 
 			

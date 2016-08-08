@@ -17,13 +17,13 @@ if(isset($_POST['submit'])){
 	}
 	if($error === $init_error){
 		$sth = $dbh->prepare('SELECT * FROM users WHERE id=:id');
-		$sth->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+		$sth->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
 		$sth->execute();
 		if($sth->rowCount() != 0){
 			$sth = $dbh->prepare('INSERT INTO comments (user_id, product_id, comment) VALUES (:user_id, :product_id, :comment)');
-			$sth->bindParam(':user_id', $_POST['user_id'], PDO::PARAM_INT);
-			$sth->bindParam(':product_id', $_POST['product_id'], PDO::PARAM_INT);
-			$sth->bindParam(':comment', $_POST['comment'], PDO::PARAM_STR);
+			$sth->bindValue(':user_id', $_POST['user_id'], PDO::PARAM_INT);
+			$sth->bindValue(':product_id', $_POST['product_id'], PDO::PARAM_INT);
+			$sth->bindValue(':comment', $_POST['comment'], PDO::PARAM_STR);
 			
 			$sth->execute();
 

@@ -19,7 +19,7 @@ include("connect-user.php");
 			<?php
 			
 			$sth = $dbh->prepare('SELECT * FROM search WHERE product_id=:id');
-			$sth->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+			$sth->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
 			$sth->execute();
 			$results = $sth->fetchAll();
 			$result = $results[0];
@@ -55,7 +55,7 @@ include("connect-user.php");
 					<?php
 					foreach($comments as $comment){
 						$sth = $dbh->prepare('SELECT * FROM users WHERE id=:id');
-						$sth->bindParam(':id', $comment[0], PDO::PARAM_INT);
+						$sth->bindValue(':id', $comment[0], PDO::PARAM_INT);
 						$sth->execute();
 						$results = $sth->fetchAll();
 						echo '
