@@ -6,6 +6,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
+<IfModule mod_headers.c>
+Header set X-XSS-Protection "0"
+</IfModule>
 <Files "badsite.sql">
 Order Allow,Deny
 Deny from all
