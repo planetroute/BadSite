@@ -31,7 +31,7 @@ include("includes.php");
 				<div class="row"><h3>Users</h3></div>
 			<div class="search-results">
 			<?php foreach($result as $row){ ?>
-				<a class="result-row" href="/product.php?id=<?php echo $row['product_id']; ?>">
+				<a class="result-row">
 					<span class="result-title"><?php echo htmlentities($row['email']); ?></span>
 					<div class="result body"><code class="user-info">
 					<?php 
