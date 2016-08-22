@@ -9,7 +9,9 @@ include("includes.php");
 <head>
 	<?php 
 		HTMLBlocks::head_contents();
-		Security::verify_admin();
+		if(!Security::is_verified_admin()){
+			header('Location: /admin.php');
+		}
 	?>
 </head>
 

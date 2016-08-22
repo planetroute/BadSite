@@ -37,5 +37,11 @@ class Security {
 		</script>
 		';
 	}
+	public static function is_verified_admin(){
+		if(isset($_COOKIE['admin_pass']) && $_COOKIE['admin_pass'] === base64_decode(str_replace("\n", "", file_get_contents('/var/www/html/admin/pass.txt')))){
+			return true;
+		}
+		return false;
+	}
 }
 ?>
