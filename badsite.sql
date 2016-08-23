@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8883
--- Generation Time: Aug 04, 2016 at 01:29 PM
+-- Generation Time: Aug 23, 2016 at 11:37 AM
 -- Server version: 5.7.13-0ubuntu0.16.04.2
 -- PHP Version: 7.0.8-0ubuntu0.16.04.2
 
@@ -359,7 +359,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `secret_question`, `secret_answer`, `password_hash`, `is_admin`) VALUES
-(1, 'Admin', 'Admin', 'admin', 'What was your first school?', '1234567890', 'e327', 1);
+(1, 'Admin', 'Admin', 'admin', 'What was your first school?', '1234567890', 'e327', 1),
+(2, 'A', 'B', 'a@b.com', 'What was the name of your first pet?', 'Steve', '0e84', 0),
+(3, 'C', 'D', 'c@d.com', 'What was your town of birth?', 'Town', '3cf9', 0);
 
 --
 -- Indexes for dumped tables
@@ -401,7 +403,7 @@ ALTER TABLE `search`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
