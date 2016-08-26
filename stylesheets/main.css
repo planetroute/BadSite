@@ -391,8 +391,12 @@ select {
 	font-size: 0.8em;
 }
 
+.secure-check a {
+	text-decoration: none;
+}
+
 .secure-check img {
-	width: 2em;
+	height: 2.5em;
 	position: relative;
 	top: 0.7em;
 }
