@@ -42,7 +42,8 @@ class HTMLBlocks {
 				<span class="login-bar"><a href="/login.php">Login</a> | <a href="/register.php">Register</a></span>
 				<?php } ?>
 			</div>
-		</div>	
+		</div>
+		<div class="secure-check"><a href="javascript:verifySecurity()"><h3><img src="/images/shield.png" /> PNG Verified</h3><div id="secure-load"></div></a></div>	
 	<?php
 	}
 }

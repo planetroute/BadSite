@@ -16,8 +16,38 @@ include("includes.php");
 	<div class="wrapper">
 		<div class="container">
 			<?php HTMLBlocks::page_header(); ?>
+			
 			<div class="content">
-				<div class="secure-check"><a href="javascript:a=['Loading integrity...', '...verifying checks...', '...counting to infinity...', '...invalidating logic...', '...interpolating checksums...', '...decoding SHA512...', '...decrypting base64...', '...encoding as AES...', 'Success!', 'Security is secure!'];e=document.getElementById('secure-load');tick=0;min=50;max=1000;function pushMsg(m){e.innerText=m};for (b of a){setTimeout(pushMsg, tick, b);tick+=Math.floor(Math.random()*max)+min;}"><h3><img src="/images/shield.png" /> PNG Verified</h3><div id="secure-load"></div></a></div>
+				<div class="main-area">
+					<h3>Welcome to our secure online store!</h3>
+					<h4>You can verify our online security using the security button!</h4>
+				</div>
+			</div>
+			<div class="comments-container">
+				<div class="comments">
+					<h3>Featured Products</h3>
+					<?php
+						$sth = $dbh->prepare('SELECT * FROM search WHERE INSTR(name, :name) > 0 LIMIT 10');
+						$sth->bindValue(':name', 'i', PDO::PARAM_STR);
+			
+						$sth->execute();
+						$result = $sth->fetchAll();
+						$n = $sth->rowCount();
+					?>
+					
+
+					<?php foreach($result as $row){ ?>
+						
+						<div class="comment-row">
+							<a href="/product.php?id=<?php echo $row['product_id']; ?>"><h4><?php echo $row['name']; ?></h4>
+								<div class="comment-body">
+									There are <?php echo $row['quantity']; ?> remaining.
+								</div>
+							</a>
+						</div>
+						
+					<?php } ?>	
+				</div>
 			</div>
 		</div>
 	</div>
